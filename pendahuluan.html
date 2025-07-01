@@ -1,96 +1,103 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Pendahuluan</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card p-4">
-            <h1 class="text-center mb-4">Pendahuluan</h1>
-            <div id="materi">
-              <div class="mb-4">
-                <h3>Apa itu Jaringan Komputer?</h3>
-                <p>
-                  Jaringan komputer adalah sekumpulan komputer yang saling
-                  terhubung dan dapat berkomunikasi satu sama lain untuk berbagi
-                  data, sumber daya, dan informasi. Jaringan ini memungkinkan
-                  perangkat keras (hardware) dan perangkat lunak (software)
-                  untuk bekerja bersama dengan efisien.
-                </p>
-              </div>
 
-              <div class="mb-4">
-                <h3>Komponen Utama Jaringan Komputer</h3>
-                <p>
-                  Secara umum, jaringan komputer terdiri dari 2 komponen utama
-                  yang saling bekerja untuk memastikan kelancaran komunikasi
-                  antar perangkat
-                </p>
-                <h4>1. Perangkat Keras (Hardware):</h4>
-                <ul>
-                  <li>Komputer: Perangkat yang terhubung dalam jaringan</li>
-                  <li>
-                    Router: Perangkat yang menghubungkan beberapa jaringan dan
-                    menentukan jalur data.
-                  </li>
-                  <li>
-                    Switch: Alat yang menghubungkan beberapa komputer dalam
-                    jaringan lokal (LAN).
-                  </li>
-                  <li>
-                    Media Transmisi: Media yang digunakan untuk mentransmisikan
-                    data, seperti kabel Ethernet, fiber optik, atau wireless
-                  </li>
-                </ul>
-                <h4>2. Perangkat Lunak (Software):</h4>
-                <ul>
-                  <li>
-                    Sistem Operasi Jaringan: Software yang mengelola koneksi dan
-                    komunikasi antar komputer, seperti Windows Server, Linux,
-                    dan lain-lain
-                  </li>
-                  <li>
-                    Protocol: Aturan atau standar yang mengatur cara komunikasi
-                    antar perangkat, seperti TCP/IP (Transmission Control
-                    Protocol/Internet Protocol), HTTP (Hypertext Transfer
-                    Protocol), dan FTP (File Transfer Protocol)
-                  </li>
-                </ul>
-              </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Pendahuluan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-4">
+          <a href="index.html" class=" btn btn-outline-secondary position-absolute top-0 start-0 m-3">
+            🏠 Home
+          </a>
+          <a href="about.html" class="btn btn-outline-secondary position-absolute top-0 end-0 m-3">
+            ℹ️ Tentang Kami
+          </a>
+          <h1 class="text-center mt-5">Pendahuluan</h1>
+          <hr>
+          <div id="materi">
+            <div class="mb-4">
+              <h3>Apa itu Jaringan Komputer?</h3>
+              <p>
+                Jaringan komputer adalah sekumpulan komputer yang saling
+                terhubung dan dapat berkomunikasi satu sama lain untuk berbagi
+                data, sumber daya, dan informasi. Jaringan ini memungkinkan
+                perangkat keras (hardware) dan perangkat lunak (software)
+                untuk bekerja bersama dengan efisien.
+              </p>
             </div>
 
-            <div class="text-center mt-4">
-              <button class="btn btn-success" onclick="playTTS()">🔊</button>
-              <a href="topologi.html" class="btn btn-primary">⏭️ Selanjutnya</a>
+            <div class="mb-4">
+              <h3>Komponen Utama Jaringan Komputer</h3>
+              <p>
+                Secara umum, jaringan komputer terdiri dari 2 komponen utama
+                yang saling bekerja untuk memastikan kelancaran komunikasi
+                antar perangkat
+              </p>
+              <h4>1. Perangkat Keras (Hardware):</h4>
+              <ul>
+                <li>Komputer: Perangkat yang terhubung dalam jaringan</li>
+                <li>
+                  Router: Perangkat yang menghubungkan beberapa jaringan dan
+                  menentukan jalur data.
+                </li>
+                <li>
+                  Switch: Alat yang menghubungkan beberapa komputer dalam
+                  jaringan lokal (LAN).
+                </li>
+                <li>
+                  Media Transmisi: Media yang digunakan untuk mentransmisikan
+                  data, seperti kabel Ethernet, fiber optik, atau wireless
+                </li>
+              </ul>
+              <h4>2. Perangkat Lunak (Software):</h4>
+              <ul>
+                <li>
+                  Sistem Operasi Jaringan: Software yang mengelola koneksi dan
+                  komunikasi antar komputer, seperti Windows Server, Linux,
+                  dan lain-lain
+                </li>
+                <li>
+                  Protocol: Aturan atau standar yang mengatur cara komunikasi
+                  antar perangkat, seperti TCP/IP (Transmission Control
+                  Protocol/Internet Protocol), HTTP (Hypertext Transfer
+                  Protocol), dan FTP (File Transfer Protocol)
+                </li>
+              </ul>
             </div>
+          </div>
+          <hr>
+          <div class="text-center">
+            <button class="btn btn-success" onclick="playTTS()">🔊</button>
+            <a href="topologi.html" class="btn btn-outline-primary top-0 start-0 m-3">⏭️ Selanjutnya</a>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    function playTTS() {
-      const teks = document.getElementById("materi").innerText;
-      const nav =
-        "      Silahkan klik tombol selanjutnya untuk menuju menu topologi jaringan";
-      const materi = new SpeechSynthesisUtterance(teks + nav);
-      materi.lang = "id-ID"; // Bahasa Indonesia
-      speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
-      speechSynthesis.speak(materi);
-    }
+  </div>
+</body>
+<script>
+  function playTTS() {
+    const teks = document.getElementById("materi").innerText;
+    const nav =
+      "      Silahkan klik tombol selanjutnya untuk menuju menu topologi jaringan";
+    const materi = new SpeechSynthesisUtterance(teks + nav);
+    materi.lang = "id-ID"; // Bahasa Indonesia
+    speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
+    speechSynthesis.speak(materi);
+  }
 
-    // Tetap coba autoplay saat halaman dimuat
-    window.addEventListener("load", () => {
-      playTTS();
-    });
-  </script>
+  // Tetap coba autoplay saat halaman dimuat
+  window.addEventListener("load", () => {
+    playTTS();
+  });
+</script>
+
 </html>

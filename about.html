@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Jenis Topologi Jaringan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap & Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card p-4">
+                    <a href="index.html" class="btn btn-outline-secondary position-absolute top-0 start-0 m-3">
+                        🏠 Home
+                    </a>
+                    <h1 class="text-center mt-5">Tentang Kami </h1>
+                    <hr>
+                    <p class="mb-4" id="teks-1">
+                        Project ini merupakan bagian dari tugas mata kuliah Multimedia, yang bertujuan untuk
+                        mengembangkan media pembelajaran interaktif.
+                    </p>
+                    <h6>Berikut ini adalah Anggota Kelompok 3:</h4>
+                        <ul>
+                            <li>Rizqi Harisma (23104410001)</li>
+                            <li>Hilga Aditya (231044100xx)</li>
+                            <li>Ulum (231044100xx)</li>
+                            <li>Andre (231044100xx)</li>
+                        </ul>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-success" onclick="playTTS()">🔊</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="closing" class="hidden" style="display: none;">
+        Anggota Kelompok kami yaitu:
+        Rizqi Harisma, Hilga Aditya, Khoirul Ulum dan Andre.
+        . . .
+        Kami dari Kelompok 3 berharap modul pembelajaran ini menjadi lebih menarik dan menyenangkan.
+        Terima kasih atas kunjungan Anda.
+    </div>
+</body>
+<script>
+    function playTTS() {
+    const teks1 = document.getElementById("teks-1").innerText;
+    const closing = document.getElementById("closing").innerText;
+    const materi = new SpeechSynthesisUtterance(teks1 + closing);
+    materi.lang = "id-ID"; // Bahasa Indonesia
+    speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
+    speechSynthesis.speak(materi);
+  }
+
+  // Tetap coba autoplay saat halaman dimuat
+  window.addEventListener("load", () => {
+    playTTS();
+  });
+</script>
+
+</html>
