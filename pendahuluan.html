@@ -21,27 +21,55 @@
                 <h3>Apa itu Jaringan Komputer?</h3>
                 <p>
                   Jaringan komputer adalah sekumpulan komputer yang saling
-                  terhubung satu sama lain untuk berbagi informasi dan sumber
-                  daya.
+                  terhubung dan dapat berkomunikasi satu sama lain untuk berbagi
+                  data, sumber daya, dan informasi. Jaringan ini memungkinkan
+                  perangkat keras (hardware) dan perangkat lunak (software)
+                  untuk bekerja bersama dengan efisien.
                 </p>
               </div>
 
               <div class="mb-4">
-                <h3>Komponen Jaringan Komputer</h3>
+                <h3>Komponen Utama Jaringan Komputer</h3>
+                <p>
+                  Secara umum, jaringan komputer terdiri dari 2 komponen utama
+                  yang saling bekerja untuk memastikan kelancaran komunikasi
+                  antar perangkat
+                </p>
+                <h4>1. Perangkat Keras (Hardware):</h4>
                 <ul>
-                  <li>Server</li>
-                  <li>Client</li>
-                  <li>Router</li>
-                  <li>Switch</li>
-                  <li>Media Transmisi (kabel/nirkabel)</li>
+                  <li>Komputer: Perangkat yang terhubung dalam jaringan</li>
+                  <li>
+                    Router: Perangkat yang menghubungkan beberapa jaringan dan
+                    menentukan jalur data.
+                  </li>
+                  <li>
+                    Switch: Alat yang menghubungkan beberapa komputer dalam
+                    jaringan lokal (LAN).
+                  </li>
+                  <li>
+                    Media Transmisi: Media yang digunakan untuk mentransmisikan
+                    data, seperti kabel Ethernet, fiber optik, atau wireless
+                  </li>
+                </ul>
+                <h4>2. Perangkat Lunak (Software):</h4>
+                <ul>
+                  <li>
+                    Sistem Operasi Jaringan: Software yang mengelola koneksi dan
+                    komunikasi antar komputer, seperti Windows Server, Linux,
+                    dan lain-lain
+                  </li>
+                  <li>
+                    Protocol: Aturan atau standar yang mengatur cara komunikasi
+                    antar perangkat, seperti TCP/IP (Transmission Control
+                    Protocol/Internet Protocol), HTTP (Hypertext Transfer
+                    Protocol), dan FTP (File Transfer Protocol)
+                  </li>
                 </ul>
               </div>
             </div>
 
             <div class="text-center mt-4">
-              <button class="btn btn-success" onclick="playTTS()">
-                🔊 
-              </button>
+              <button class="btn btn-success" onclick="playTTS()">🔊</button>
               <a href="topologi.html" class="btn btn-primary">⏭️ Selanjutnya</a>
             </div>
           </div>
@@ -52,7 +80,8 @@
   <script>
     function playTTS() {
       const teks = document.getElementById("materi").innerText;
-      const nav = "      Silahkan klik tombol selanjutnya untuk menuju menu topologi jaringan" 
+      const nav =
+        "      Silahkan klik tombol selanjutnya untuk menuju menu topologi jaringan";
       const materi = new SpeechSynthesisUtterance(teks + nav);
       materi.lang = "id-ID"; // Bahasa Indonesia
       speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
@@ -63,6 +92,5 @@
     window.addEventListener("load", () => {
       playTTS();
     });
-
   </script>
 </html>

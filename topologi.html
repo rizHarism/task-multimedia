@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Jenis Topologi Jaringan</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap & Custom CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card p-4 text-center">
-            <h1 class="mb-4">Jenis Topologi Jaringan Komputer</h1>
 
-            <p class="mb-4">
-              Pilih salah satu jenis topologi di bawah ini untuk mempelajari
-              lebih lanjut.
-            </p>
+<head>
+  <meta charset="UTF-8" />
+  <title>Jenis Topologi Jaringan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap & Custom CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/style.css" rel="stylesheet" />
+</head>
 
-            <div class="d-grid gap-3 col-6 mx-auto">
-              <a href="bus.html" class="btn btn-outline-primary"
-                >Topologi Bus</a
-              >
-              <a href="ring.html" class="btn btn-outline-primary"
-                >Topologi Ring</a
-              >
-              <a href="star.html" class="btn btn-outline-primary"
-                >Topologi Star</a
-              >
+<body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-4 text-center">
+          <h1 class="mb-2">Jenis Topologi Jaringan Komputer</h1>
+          <hr>
+          <h5 class="mb-4">
+            Pilih salah satu jenis topologi di bawah ini untuk mempelajari
+            lebih lanjut.
+          </h5>
+
+          <div class="row">
+            <div class="col">
+              <a href="bus.html" class="btn btn-outline-primary">
+                <img src="assets/img/bus.png" alt="Logo Modul" class="mb-0" style="width: 150px" />
+              </a>
             </div>
-
-            <div class="text-center mt-4">
-              <button class="btn btn-success" onclick="playTTS()">🔊</button>
-              <a href="pendahuluan.html" class="btn btn-secondary"
-                >Kembali ke Pendahuluan</a
-              >
+            <div class="col">
+              <a href="ring.html" class="btn btn-outline-primary">
+                <img src="assets/img/ring.png" alt="Logo Modul" class="mb-0" style="width: 150px" />
+              </a>
             </div>
+            <div class="col">
+              <a href="star.html" class="btn btn-outline-primary">
+                <img src="assets/img/star.png" alt="Logo Modul" class="mb-0" style="max-width: 150px" />
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div class="text-center mt-4">
+            <button class="btn btn-success" onclick="playTTS()">🔊</button>
+            <a href="pendahuluan.html" class="btn btn-secondary">Kembali ke Pendahuluan</a>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    function playTTS() {
-      const teks = "Di halaman ini anda bisa memilih topologi jaringan mana yang ingin anda pelajari. Ada topologi Bus, ring dan star. Silahkan tekan salah satu tombol untuk menuju materi yang ingin anda pelajari" 
-      const nav = new SpeechSynthesisUtterance(teks);
-      nav.lang = "id-ID"; // Bahasa Indonesia
-      speechSynthesis.cancel();
-      speechSynthesis.speak(nav)
-    }
+  </div>
+</body>
+<script>
+  function playTTS() {
+    const teks =
+      "Di halaman ini anda bisa memilih topologi jaringan mana yang ingin anda pelajari. Ada topologi Bus, ring dan star. Silahkan tekan salah satu tombol untuk menuju materi yang ingin anda pelajari";
+    const nav = new SpeechSynthesisUtterance(teks);
+    nav.lang = "id-ID"; // Bahasa Indonesia
+    speechSynthesis.cancel();
+    speechSynthesis.speak(nav);
+  }
 
-    // Tetap coba autoplay saat halaman dimuat
-    window.addEventListener("load", () => {
-      playTTS()
-    });
-  </script>
+  // Tetap coba autoplay saat halaman dimuat
+  window.addEventListener("load", () => {
+    playTTS();
+  });
+</script>
+
 </html>
