@@ -40,11 +40,9 @@
 
             <div class="text-center mt-4">
               <button class="btn btn-success" onclick="playTTS()">
-                🔊 Baca Penjelasan
+                🔊 
               </button>
-              <a href="topologi.html" class="btn btn-primary"
-                >Lanjut ke Jenis Topologi</a
-              >
+              <a href="topologi.html" class="btn btn-primary">⏭️ Selanjutnya</a>
             </div>
           </div>
         </div>
@@ -54,15 +52,17 @@
   <script>
     function playTTS() {
       const teks = document.getElementById("materi").innerText;
-      const ucapan = new SpeechSynthesisUtterance(teks);
-      ucapan.lang = "id-ID"; // Bahasa Indonesia
+      const nav = "      Silahkan klik tombol selanjutnya untuk menuju menu topologi jaringan" 
+      const materi = new SpeechSynthesisUtterance(teks + nav);
+      materi.lang = "id-ID"; // Bahasa Indonesia
       speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
-      speechSynthesis.speak(ucapan);
+      speechSynthesis.speak(materi);
     }
 
     // Tetap coba autoplay saat halaman dimuat
     window.addEventListener("load", () => {
       playTTS();
     });
+
   </script>
 </html>
