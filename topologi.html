@@ -51,13 +51,13 @@
       const teks = "Di halaman ini anda bisa memilih topologi jaringan mana yang ingin anda pelajari. Ada topologi Bus, ring dan star. Silahkan tekan salah satu tombol untuk menuju materi yang ingin anda pelajari" 
       const nav = new SpeechSynthesisUtterance(teks);
       nav.lang = "id-ID"; // Bahasa Indonesia
-      speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
-      speechSynthesis.speak(nav);
+      speechSynthesis.cancel();
+      speechSynthesis.speak(nav)
     }
 
     // Tetap coba autoplay saat halaman dimuat
     window.addEventListener("load", () => {
-      playTTS();
+      playTTS()
     });
   </script>
 </html>

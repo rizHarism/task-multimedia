@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Topologi Star</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap & Custom CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/style.css" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Topologi Star</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap & Custom CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-4">
+            <h1 class="text-center mb-4">Topologi Star</h1>
 
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card p-4">
-          <h1 class="text-center mb-4">Topologi Star</h1>
+            <div class="ratio ratio-16x9 mb-4">
+              <video controls>
+                <source src="assets/video/star.mp4" type="video/mp4" />
+                Browser Anda tidak mendukung pemutaran video.
+              </video>
+            </div>
 
-          <div class="ratio ratio-16x9 mb-4">
-            <video controls>
-              <source src="assets/video/star.mp4" type="video/mp4">
-              Browser Anda tidak mendukung pemutaran video.
-            </video>
+            <div>
+              <h5>Penjelasan:</h5>
+              <div id="materi">
+                <p>
+                  Topologi Star menghubungkan semua perangkat ke satu perangkat
+                  pusat (biasanya switch atau hub). Semua komunikasi antara
+                  perangkat melewati titik pusat ini.
+                </p>
+                <ul>
+                  <li>Paling sering digunakan dalam jaringan modern</li>
+                  <li>Jika satu perangkat mati, jaringan tetap jalan</li>
+                  <li>Jika switch pusat mati, semua koneksi terputus</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-success" onclick="playTTS()">🔊</button>
+              <a href="topologi.html" class="btn btn-secondary"
+                >Kembali ke Daftar Topologi</a
+              >
+            </div>
           </div>
-
-          <div>
-            <h5>Penjelasan:</h5>
-            <p>
-              Topologi Star menghubungkan semua perangkat ke satu perangkat pusat (biasanya switch atau hub). Semua komunikasi antara perangkat melewati titik pusat ini.
-            </p>
-            <ul>
-              <li>Paling sering digunakan dalam jaringan modern</li>
-              <li>Jika satu perangkat mati, jaringan tetap jalan</li>
-              <li>Jika switch pusat mati, semua koneksi terputus</li>
-            </ul>
-          </div>
-
-          <div class="text-center mt-4">
-            <a href="topologi.html" class="btn btn-secondary">Kembali ke Daftar Topologi</a>
-          </div>
-
         </div>
       </div>
     </div>
-  </div>
+    <script>
+      function playTTS() {
+        const teks = document.getElementById("materi").innerText;
+        const materi = new SpeechSynthesisUtterance(teks);
+        materi.lang = "id-ID"; // Bahasa Indonesia
+        speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
+        speechSynthesis.speak(materi);
+      }
 
-</body>
+      // Tetap coba autoplay saat halaman dimuat
+      window.addEventListener("load", () => {
+        playTTS();
+      });
+    </script>
+  </body>
 </html>
