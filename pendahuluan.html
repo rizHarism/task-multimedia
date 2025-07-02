@@ -75,7 +75,7 @@
           </div>
           <hr>
           <div class="text-center mt-2">
-            <button class="btn btn-outline-success" onclick="playTTS()">🔊</button>
+            <button class="btn btn-outline-success" onclick="toggleTTSManual()"><span id="toggle-tts">🔇Aktifkan Narasi</span></button>
             <a href="topologi.html" class="btn btn-outline-primary top-0 start-0 m-3">⏭️ Selanjutnya</a>
           </div>
         </div>
@@ -83,6 +83,7 @@
     </div>
   </div>
 </body>
+<script src="assets/js/tts-control.js"></script>
 <script>
   function playTTS() {
     const teks = document.getElementById("materi").innerText;
@@ -94,9 +95,25 @@
     speechSynthesis.speak(materi);
   }
 
-  //  autoplay on load
+  function toggleTTSManual() {
+    const aktif = isTTSAktif();
+
+    if (aktif) {
+      nonaktifkanTTS();
+      speechSynthesis.cancel();
+    } else {
+      aktifkanTTS();
+      playTTS();
+    }
+    updateTTSButtonIcon();
+  }
+
+  // autoplay onload page
   window.addEventListener("load", () => {
-    playTTS();
+    if (isTTSAktif()) {
+      playTTS();
+    }
+    updateTTSButtonIcon();
   });
 </script>
 <script src="assets/js/click.js"></script>

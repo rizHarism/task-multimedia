@@ -47,7 +47,7 @@
           </div>
           <hr>
           <div class="text-center mt-2">
-            <button class="btn btn-outline-success" onclick="playTTS()">🔊</button>
+            <button class="btn btn-outline-success" onclick="toggleTTSManual()"><span id="toggle-tts">🔇Aktifkan Narasi</span></button>
             <a href="pendahuluan.html" class="btn btn-outline-secondary">⏮️ Kembali</a>
           </div>
         </div>
@@ -55,19 +55,36 @@
     </div>
   </div>
 </body>
+<script src="assets/js/tts-control.js"></script>
 <script>
   function playTTS() {
     const teks =
       "Di halaman ini anda bisa memilih topologi jaringan mana yang ingin anda pelajari. Ada topologi Bus, ring dan star. Silahkan tekan salah satu tombol untuk menuju materi yang ingin anda pelajari";
     const nav = new SpeechSynthesisUtterance(teks);
-    nav.lang = "id-ID"; 
+    nav.lang = "id-ID";
     speechSynthesis.cancel();
     speechSynthesis.speak(nav);
   }
 
-  // autoplay 
+  function toggleTTSManual() {
+    const aktif = isTTSAktif();
+
+    if (aktif) {
+      nonaktifkanTTS();
+      speechSynthesis.cancel();
+    } else {
+      aktifkanTTS();
+      playTTS();
+    }
+    updateTTSButtonIcon();
+  }
+
+  // autoplay onload page
   window.addEventListener("load", () => {
-    playTTS();
+    if (isTTSAktif()) {
+      playTTS();
+    }
+    updateTTSButtonIcon();
   });
 </script>
 <script src="assets/js/click.js"></script>

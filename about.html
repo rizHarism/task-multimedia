@@ -29,10 +29,10 @@
                             <li>Rizqi Harisma Uchrowi (23104410001)</li>
                             <li>Hilga Aditya Pratama (23104410012)</li>
                             <li>Muchamad Choirul Ulum (23104410043)</li>
-                            <li>Andrecaesar Setiawan (231044100xx)</li>
+                            <li>Andrecaesar Setiawan (23104410042)</li>
                         </ul>
                         <div class="text-center mt-2">
-                            <button class="btn btn-outline-success" onclick="playTTS()">🔊</button>
+                            <button class="btn btn-outline-success" onclick="toggleTTSManual()"><span id="toggle-tts">🔇Aktifkan Narasi</span></button>
                         </div>
                 </div>
             </div>
@@ -41,25 +41,43 @@
     <div id="closing" class="hidden" style="display: none;">
         Anggota Kelompok kami yaitu:
         Rizqi Harisma, Hilga Aditya, Khoirul Ulum, dan Andre Caesar.
-        
+
         Kami dari Kelompok 3 berharap, modul pembelajaran ini dapat digunakan sebagaimana mestinya.
         Terima kasih atas kunjungan Anda.
     </div>
 </body>
+<script src="assets/js/tts-control.js"></script>
 <script>
     function playTTS() {
-    const teks1 = document.getElementById("teks-1").innerText;
-    const closing = document.getElementById("closing").innerText;
-    const materi = new SpeechSynthesisUtterance(teks1 + closing);
-    materi.lang = "id-ID"; 
-    speechSynthesis.cancel(); // stop running speech
-    speechSynthesis.speak(materi);
-  }
+        const teks1 = document.getElementById("teks-1").innerText;
+        const closing = document.getElementById("closing").innerText;
+        const materi = new SpeechSynthesisUtterance(teks1 + closing);
+        materi.lang = "id-ID";
+        speechSynthesis.cancel(); // stop running speech
+        speechSynthesis.speak(materi);
+    }
 
-  // autoplay when page load
-  window.addEventListener("load", () => {
-    playTTS();
-  });
+    function toggleTTSManual() {
+        const aktif = isTTSAktif();
+
+        if (aktif) {
+            nonaktifkanTTS();
+            speechSynthesis.cancel();
+        } else {
+            aktifkanTTS();
+            playTTS();
+        }
+        updateTTSButtonIcon();
+    }
+
+    // autoplay onload page
+    window.addEventListener("load", () => {
+        if (isTTSAktif()) {
+            playTTS();
+        }
+        updateTTSButtonIcon();
+    });
 </script>
 <script src="assets/js/click.js"></script>
+
 </html>
