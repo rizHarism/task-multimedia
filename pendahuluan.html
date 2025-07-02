@@ -89,12 +89,12 @@
     const nav =
       "      Silahkan klik tombol selanjutnya untuk menuju menu topologi jaringan";
     const materi = new SpeechSynthesisUtterance(teks + nav);
-    materi.lang = "id-ID"; // Bahasa Indonesia
-    speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
+    materi.lang = "id-ID";
+    speechSynthesis.cancel();
     speechSynthesis.speak(materi);
   }
 
-  // Tetap coba autoplay saat halaman dimuat
+  //  autoplay on load
   window.addEventListener("load", () => {
     playTTS();
   });

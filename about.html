@@ -26,10 +26,10 @@
                     </p>
                     <h6>Berikut ini adalah Anggota Kelompok 3:</h4>
                         <ul>
-                            <li>Rizqi Harisma (23104410001)</li>
-                            <li>Hilga Aditya (231044100xx)</li>
-                            <li>Ulum (231044100xx)</li>
-                            <li>Andre (231044100xx)</li>
+                            <li>Rizqi Harisma Uchrowi (23104410001)</li>
+                            <li>Hilga Aditya Pratama (23104410012)</li>
+                            <li>Muchamad Choirul Ulum (23104410043)</li>
+                            <li>Andrecaesar Setiawan (231044100xx)</li>
                         </ul>
                         <div class="text-center mt-2">
                             <button class="btn btn-outline-success" onclick="playTTS()">🔊</button>
@@ -40,9 +40,9 @@
     </div>
     <div id="closing" class="hidden" style="display: none;">
         Anggota Kelompok kami yaitu:
-        Rizqi Harisma, Hilga Aditya, Khoirul Ulum, dan Andre.
+        Rizqi Harisma, Hilga Aditya, Khoirul Ulum, dan Andre Caesar.
         
-        Kami dari Kelompok 3 berharap, modul pembelajaran ini menarik dan menyenangkan.
+        Kami dari Kelompok 3 berharap, modul pembelajaran ini dapat digunakan sebagaimana mestinya.
         Terima kasih atas kunjungan Anda.
     </div>
 </body>
@@ -51,12 +51,12 @@
     const teks1 = document.getElementById("teks-1").innerText;
     const closing = document.getElementById("closing").innerText;
     const materi = new SpeechSynthesisUtterance(teks1 + closing);
-    materi.lang = "id-ID"; // Bahasa Indonesia
-    speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
+    materi.lang = "id-ID"; 
+    speechSynthesis.cancel(); // stop running speech
     speechSynthesis.speak(materi);
   }
 
-  // Tetap coba autoplay saat halaman dimuat
+  // autoplay when page load
   window.addEventListener("load", () => {
     playTTS();
   });

@@ -67,12 +67,12 @@
   function playTTS() {
     const teks = document.getElementById("materi").innerText;
     const materi = new SpeechSynthesisUtterance(teks);
-    materi.lang = "id-ID"; // Bahasa Indonesia
-    speechSynthesis.cancel(); // hentikan jika ada suara aktif sebelumnya
+    materi.lang = "id-ID"; 
+    speechSynthesis.cancel(); 
     speechSynthesis.speak(materi);
   }
 
-  // Tetap coba autoplay saat halaman dimuat
+  // autoplay 
   window.addEventListener("load", () => {
     playTTS();
   });
